@@ -7,11 +7,14 @@ function addIconToDom(imgSourceTag){
 
 
 // add Weather Detail to Dom
-function addTempToDom(temperatue){
+function addTempToDom(temperatue,location){
     const temperatureDiv = document.createElement("div");
     temperatureDiv.textContent = `${temperatue} \xB0 C`;
 
-    document.querySelector(".main-container").appendChild(temperatureDiv);
+    const locationDiv = document.createElement("div");
+    locationDiv.textContent = location;
+
+    document.querySelector(".main-container").replaceChildren(temperatureDiv,locationDiv);
 }
 
 export {addIconToDom, addTempToDom};
